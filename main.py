@@ -1,4 +1,5 @@
 from random import randint
+import turtle
 
 
 class Point:
@@ -37,10 +38,10 @@ def check_coord():
         b2 += 2
 
 
-a1 = randint(0, 10)
-a2 = randint(0, 10)
-b1 = randint(0, 10)
-b2 = randint(0, 10)
+a1 = randint(10, 200)
+a2 = randint(10, 200)
+b1 = randint(10, 200)
+b2 = randint(10, 200)
 
 check_coord()
 print(f'Point x={a1, a2},point y={b1, b2}')
@@ -50,3 +51,22 @@ print(Point(q, w).falls_in_rec(Rectangle(Point(a1, a2), Point(b1, b2))))
 e = int(input('Guess rectangle area: '))
 print(f'Rectangle area: {Rectangle(Point(a1, a2), Point(b1, b2)).area()}')
 print(Rectangle(Point(a1, a2), Point(b1, b2)).area() == e)
+# Adding Turtle module
+t = turtle.Turtle()
+t.penup()
+t.goto(a1, a2)
+t.pendown()
+i = 0
+
+while i != 2:
+    t.forward(b1 - a1)
+    t.left(90)
+    t.forward(b2 - a2)
+    t.left(90)
+    i += 1
+
+t.penup()
+t.goto(q, w)
+t.pendown()
+t.dot(5, 'red')
+turtle.done()
