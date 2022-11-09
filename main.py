@@ -56,14 +56,12 @@ t = turtle.Turtle()
 t.penup()
 t.goto(a1, a2)
 t.pendown()
-i = 0
 
-while i != 2:
+for i in range(2):
     t.forward(b1 - a1)
     t.left(90)
     t.forward(b2 - a2)
     t.left(90)
-    i += 1
 
 t.penup()
 t.goto(q, w)
